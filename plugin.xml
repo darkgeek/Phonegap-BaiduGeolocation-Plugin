@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="edu.hdu.darkgeek.baidu_geolocation" version="0.0.1" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>BaiduGeolocation</name>
+    <description>Get your location via Baidu Map SDK</description>
+    <js-module name="BaiduGeolocation" src="www/BaiduGeolocation.js">
+        <clobbers target="cordova.plugins.BaiduGeolocation"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="BaiduGeolocation">
+                <param name="android-package" value="edu.hdu.darkgeek.baidu_geolocation.BaiduGeolocation"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="SLylBgIdQxiZUIzIkECejT8w" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+            <uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+            </service>
+        </config-file>
+        <source-file src="src/android/BaiduLBS_Android.jar" target-dir="libs" framework="true"/>
+        <source-file src="src/android/liblocSDK4d.so" target-dir="libs/armeabi" framework="true"/>         
+        <source-file src="src/android/BaiduGeolocation.java" target-dir="src/edu/hdu/darkgeek/baidu_geolocation"/>
+    </platform>
+</plugin>
