@@ -13,7 +13,13 @@ Phonegap-BaiduGeolocation-Plugin
 
 ## 使用方法
 
-JS端的调用接口与W3C规定的[Geolocation接口](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation)基本一致。不过，本插件目前暂不支持geolocation_option。
+首先，请在`plugin.xml`中修改[ak密钥](http://lbsyun.baidu.com/apiconsole/key?application=key)为您自己的密钥值：
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="您的密钥" />
+    </config-file>
+
+JS端的调用接口（目前只支持getCurrentPosition）与W3C规定的[Geolocation接口](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation)基本一致。不过，本插件目前暂不支持geolocation_option。
 
     window.BaiduGeolocation.getCurrentPosition(successCallback, errorCallback);
 

@@ -14,7 +14,7 @@
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="SLylBgIdQxiZUIzIkECejT8w" />
+            <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="" />
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
