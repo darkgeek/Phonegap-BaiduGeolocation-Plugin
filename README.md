@@ -24,3 +24,7 @@ JS端的调用接口（目前只支持getCurrentPosition）与W3C规定的[Geolo
     window.BaiduGeolocation.getCurrentPosition(successCallback, errorCallback);
 
 其中successCallback和errorCallback分别为成功取得位置数据和获取失败的回调函数。    
+
+## 百度地图API使用条款
+
+详见[使用条款](http://developer.baidu.com/map/index.php?title=open/law)。
