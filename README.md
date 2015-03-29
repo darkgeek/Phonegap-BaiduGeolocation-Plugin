@@ -13,17 +13,29 @@ Phonegap-BaiduGeolocation-Plugin
 
 ## 使用方法
 
-首先，请在`plugin.xml`中修改[ak密钥](http://lbsyun.baidu.com/apiconsole/key?application=key)为您自己的密钥值：
+1. 配置`plugin.xml`文件，修改[ak密钥](http://lbsyun.baidu.com/apiconsole/key?application=key)为您自己的密钥值：
 
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
         <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="您的密钥" />
     </config-file>
 
-JS端的调用接口（目前只支持getCurrentPosition）与W3C规定的[Geolocation接口](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation)基本一致。不过，本插件目前暂不支持geolocation_option。
-
+2. 接下来，您可以通过JavaScript调用`getCurrentPosition`方法来获取经纬度信息：
+ 
     window.BaiduGeolocation.getCurrentPosition(successCallback, errorCallback);
 
-其中successCallback和errorCallback分别为成功取得位置数据和获取失败的回调函数。    
+其中，`successCallback`是在成功获取经纬度后触发的回调方法，该方法使用一个包含位置信息的对象作为输入参数；`errorCallback`是在获取失败后触发的回调方法，其参数为一个包含错误信息的对象。
+
+## 使用举例
+
+    var onSuccess = function(position) {
+        console.log("Get location: " + position.coords.latitude + "," + position.coords.longitude);
+    };
+
+    var onError = function(err) {
+        console.error("Failed to get location: " + err.message);
+    };
+
+    window.BaiduGeolocation.getCurrentPosition(onSuccess, onError);
 
 ## 百度地图API使用条款
 
