@@ -9,7 +9,7 @@ Phonegap-BaiduGeolocation-Plugin
 
 ## 安装方法
 
-```
+```shell
     cordova plugin add https://github.com/darkgeek/Phonegap-BaiduGeolocation-Plugin.git
 ```
 
@@ -79,6 +79,10 @@ A: 您可以修改工程目录下`plugins\android.json` 文件：
 
 修改`com.baidu.lbsapi.API_KEY`所对应的`android:value`为您的密钥值。参考 [issue #2](../../issues/2)。
  
+## TODO
+
+1. 加入测试用例，确保插件的可靠性。
+2. 进一步将此API向W3C规定的geolocation接口靠拢。
 
 ## 百度地图API使用条款
 
